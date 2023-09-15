@@ -1,8 +1,19 @@
 package com.mahabirgupta.springboot.learnjpaandhibernate.course;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+//Create an entity to link/map the Course directly to the database
+@Entity
 public class Course {
+
+//    add primary key
+    @Id
     private long id;
+    @Column(name = "name") //not mandatory. Can remove it
     private String name;
+    @Column(name = "author") //not mandatory. Can remove it
     private String author;
 
 //    Create constructor
