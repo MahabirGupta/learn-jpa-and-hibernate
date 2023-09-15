@@ -29,7 +29,18 @@ private CourseSpringDataJPARepository repository;
         repository.save(new Course(3,"Learn DevOps JPA!","Udemy"));
 
         repository.deleteById(1l); //1l means 1 long because passing in long data type
+
         System.out.println(repository.findById(2l));
         System.out.println(repository.findById(3l));
+
+        System.out.println(repository.findAll()); // find all the courses
+        System.out.println(repository.count()); // count all the entities
+
+        System.out.println(repository.findByAuthor("Udemy")); // find all the courses by author's name
+        System.out.println(repository.findByAuthor("")); // find all the courses
+
+        System.out.println(repository.findByName("Learn DevOps JPA!")); // find all the courses by author's name
+        System.out.println(repository.findByName("Learn Spring!")); // find all the courses by author's name
+
     }
 }
